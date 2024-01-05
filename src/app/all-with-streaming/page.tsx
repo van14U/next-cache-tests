@@ -15,7 +15,7 @@ export default function All() {
   const now = new Date();
   return (
     <main className="mx-auto h-screen min-h-screen w-full max-w-5xl font-mono">
-      <h1 className="pt-8 text-xl font-semibold">Cache tests without streaming</h1>
+      <h1 className="pt-8 text-xl font-semibold">Cache tests with streaming</h1>
       <p>
         Current time:{" "}
         {`EST ${now.toLocaleString("en-US", {
