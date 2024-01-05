@@ -38,6 +38,13 @@ export default function Home() {
             20s revalidate
           </Link>
         </li>
+        <li>
+          <Link href={'/all-no-streaming'}
+            className='text-blue-500 hover:text-blue-700'
+          >
+            All (no streaming)
+          </Link>
+        </li>
       </ul>
     </main>
   );

@@ -44,7 +44,6 @@ export const getCachedTime20secWithLatency = unstable_cache(
 
 export const getCachedTime20secReval = unstable_cache(
   async () => {
-    // await waitFor();
     return new Date().toISOString();
   },
   [keys.Reval20Sec],
