@@ -48,8 +48,8 @@ export const getCachedTime10secWithLatency = unstable_cache(
     await waitFor(LATENCY);
     return new Date().toISOString();
   },
-  [keys.Reval20SecWithLatency],
-  { tags: [keys.Reval20SecWithLatency], revalidate: 20 },
+  [keys.Reval10SecWithLatency],
+  { tags: [keys.Reval10SecWithLatency], revalidate: 10 },
 );
 
 export const getCachedTime20secReval = unstable_cache(
