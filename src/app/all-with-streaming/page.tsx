@@ -7,6 +7,7 @@ import {
   getCachedTimeNoReval,
   keys
 } from "../_queries/cached";
+import { Suspense } from "react";
 
 export const runtime = "edge";
 
@@ -37,7 +38,9 @@ export default function All() {
         <h2 className="mt-4 text-lg font-semibold">
           Latency for key <Chip text={keys.Reval10SecWithLatency} />
         </h2>
-        <CachedResults fn={getCachedTime10secWithLatency} revalidate={10} latency />
+        <Suspense fallback="loading...">
+          <CachedResults fn={getCachedTime10secWithLatency} revalidate={10} latency />
+        </Suspense>
       </>
       <>
         <h2 className="mt-4 text-lg font-semibold">
@@ -52,11 +55,13 @@ export default function All() {
         <h2 className="mt-4 text-lg font-semibold">
           Latency for key <Chip text={keys.Reval20SecWithLatency} />
         </h2>
-        <CachedResults
-          fn={getCachedTime20secWithLatency}
-          revalidate={20}
-          latency
-        />
+        <Suspense fallback="loading...">
+          <CachedResults
+            fn={getCachedTime20secWithLatency}
+            revalidate={20}
+            latency
+          />
+        </Suspense>
       </>
       <h2 className="mt-4 text-lg font-semibold">Revalidation</h2>
       <p>revalidateTag</p>

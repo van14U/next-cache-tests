@@ -8,8 +8,8 @@ export function RevalidateButton(props: { tagKey: KeyValue }) {
   }
   return (
     <form action={testRevalidation}>
-      <button className="rounded-md border border-zinc-700 bg-zinc-900 px-2 text-base text-white shadow-sm hover:bg-zinc-800">
-        Revalidate {props.tagKey}
+      <button className="rounded-md h-8 border border-zinc-700 bg-zinc-900 px-2 text-base text-white shadow-sm hover:bg-zinc-800">
+        {props.tagKey}
       </button>
     </form>
   );

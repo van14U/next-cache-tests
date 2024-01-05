@@ -45,6 +45,13 @@ export default function Home() {
             All (no streaming)
           </Link>
         </li>
+        <li>
+          <Link href={'/all-with-streaming'}
+            className='text-blue-500 hover:text-blue-700'
+          >
+            All (streaming)
+          </Link>
+        </li>
       </ul>
     </main>
   );
