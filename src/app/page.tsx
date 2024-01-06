@@ -53,10 +53,17 @@ export default function Home() {
           </Link>
         </li>
         <li>
-          <Link href={'/single-query-streaming'}
+          <Link href={'/streaming-cache-patch-no-async'}
             className='text-blue-500 hover:text-blue-700'
           >
-            single query (streaming)
+            Patched isr cache (streaming) no async
+          </Link>
+        </li>
+        <li>
+          <Link href={'/streaming-cache-patch-async'}
+            className='text-blue-500 hover:text-blue-700'
+          >
+            Patched isr cache (streaming) async
           </Link>
         </li>
       </ul>

@@ -33,7 +33,7 @@ async function CachedDate() {
   </div>
 }
 
-export default function Bugged() {
+export default async function Patched() {
   const now = new Date();
   return <div>
     Time: {now.toLocaleString("en-US", {
