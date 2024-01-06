@@ -6,13 +6,13 @@ import {
 
 export const runtime = "edge";
 
-export default async function Patched() {
+export default function Patched() {
   const now = new Date();
   return <div>
     Time: {now.toLocaleString("en-US", {
       timeZone: "America/New_York",
     })}
-    <div>cached value:</div>
+    <div>cached value + patch + 200ms latency:</div>
     <ForceCacheRevalidation />
     <Suspense fallback={'loading'}>
       <CachedDateWithLatency />

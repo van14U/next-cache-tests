@@ -12,7 +12,7 @@ export default function Patched() {
     Time: {now.toLocaleString("en-US", {
       timeZone: "America/New_York",
     })}
-    <div>cached value:</div>
+    <div>cached value + patch + no simulated latency:</div>
     <ForceCacheRevalidation />
     <Suspense fallback={'loading'}>
       <CachedDate />

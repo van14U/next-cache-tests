@@ -22,17 +22,10 @@ export default function Home() {
           </Link>
         </li>
         <li>
-          <Link href={'/streaming-cache-patch-no-async'}
+          <Link href={'/streaming-cache-patch'}
             className='text-blue-500 hover:text-blue-700'
           >
-            Patched isr cache (streaming) with 200ms latency  no async
-          </Link>
-        </li>
-        <li>
-          <Link href={'/streaming-cache-patch-async'}
-            className='text-blue-500 hover:text-blue-700'
-          >
-            Patched isr cache (streaming) with 200ms latency async
+            Patched isr cache (streaming) with 200ms latency
           </Link>
         </li>
         <li>

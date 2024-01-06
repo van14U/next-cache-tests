@@ -11,7 +11,7 @@ export default function Patched() {
     Time: {now.toLocaleString("en-US", {
       timeZone: "America/New_York",
     })}
-    <div>Why is the value not revalidating:</div>
+    <div>Why is the value not revalidating (when reloading):</div>
     <Suspense fallback={'loading'}>
       <CachedDateWithLatency />
     </Suspense>
