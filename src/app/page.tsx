@@ -8,7 +8,7 @@ export default function Home() {
       <h1 className="pt-8 text-xl font-semibold">Cache tests without KV using unstable_cache</h1>
       <ul>
         <li>
-          <Link href={'/streaming-cache-bugged'}
+          <Link href={'/streaming-cache-no-simulated-latency'}
             className='text-blue-500 hover:text-blue-700'
           >
             Not Bugged isr cache (streaming) no simulated latency
