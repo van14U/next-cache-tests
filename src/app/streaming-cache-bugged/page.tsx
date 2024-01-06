@@ -1,7 +1,6 @@
 import { Suspense } from "react";
 import {
   CachedDate,
-  ForceCacheRevalidation
 } from "../_queries/cached";
 
 export const runtime = "edge";
@@ -12,8 +11,7 @@ export default function Patched() {
     Time: {now.toLocaleString("en-US", {
       timeZone: "America/New_York",
     })}
-    <div>Bugged value:</div>
-    <ForceCacheRevalidation />
+    <div>Why is the value not revalidating:</div>
     <Suspense fallback={'loading'}>
       <CachedDate />
     </Suspense>
