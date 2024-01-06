@@ -1,9 +1,13 @@
 import { unstable_cache } from "next/cache";
 import { Suspense } from "react";
+import { waitFor } from "../_queries/cached";
 
 const CACHE_DATE_KEY = "cached-date";
 
+export const runtime = "edge";
+
 const cachedDate = unstable_cache(async () => {
+  await waitFor(1000);
   return new Date().toISOString();
 },
   [CACHE_DATE_KEY],
