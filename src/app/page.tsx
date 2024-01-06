@@ -52,6 +52,13 @@ export default function Home() {
             All (streaming)
           </Link>
         </li>
+        <li>
+          <Link href={'/single-query-streaming'}
+            className='text-blue-500 hover:text-blue-700'
+          >
+            single query (streaming)
+          </Link>
+        </li>
       </ul>
     </main>
   );
