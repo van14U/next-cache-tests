@@ -8,10 +8,10 @@ export default function Home() {
       <h1 className="pt-8 text-xl font-semibold">Cache tests without KV using unstable_cache</h1>
       <ul>
         <li>
-          <Link href={'/streaming-cache-patch-no-async'}
+          <Link href={'/streaming-cache-bugged'}
             className='text-blue-500 hover:text-blue-700'
           >
-            Bugger isr cache (streaming)
+            Bugged isr cache (streaming)
           </Link>
         </li>
         <li>
