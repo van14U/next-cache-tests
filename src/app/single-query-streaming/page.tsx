@@ -17,8 +17,10 @@ const cachedDate = unstable_cache(async () => {
   }
 )
 
+const cacheReader = unstable_cache(() => Promise.resolve(0),)
+
 async function ForceCacheRevalidation() {
-  await Promise.resolve(0);
+  await cacheReader();
   return null
 }
 
