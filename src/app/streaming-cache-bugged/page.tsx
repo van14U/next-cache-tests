@@ -1,6 +1,6 @@
 import { Suspense } from "react";
 import {
-  CachedDate,
+  CachedDateWithLatency,
 } from "../_queries/cached";
 
 export const runtime = "edge";
@@ -13,7 +13,7 @@ export default function Patched() {
     })}
     <div>Why is the value not revalidating:</div>
     <Suspense fallback={'loading'}>
-      <CachedDate />
+      <CachedDateWithLatency />
     </Suspense>
   </div>
 }

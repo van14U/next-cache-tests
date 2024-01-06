@@ -11,7 +11,14 @@ export default function Home() {
           <Link href={'/streaming-cache-bugged'}
             className='text-blue-500 hover:text-blue-700'
           >
-            Bugged isr cache (streaming)
+            Not Bugged isr cache (streaming) no simulated latency
+          </Link>
+        </li>
+        <li>
+          <Link href={'/streaming-cache-bugged'}
+            className='text-blue-500 hover:text-blue-700'
+          >
+            Bugged isr cache (streaming) with 200ms latency
           </Link>
         </li>
         <li>

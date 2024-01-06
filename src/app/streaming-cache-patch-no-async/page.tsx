@@ -1,6 +1,6 @@
 import { Suspense } from "react";
 import {
-  CachedDate,
+  CachedDateWithLatency,
   ForceCacheRevalidation
 } from "../_queries/cached";
 
@@ -15,7 +15,7 @@ export default function Patched() {
     <div>Bugged value:</div>
     <ForceCacheRevalidation />
     <Suspense fallback={'loading'}>
-      <CachedDate />
+      <CachedDateWithLatency />
     </Suspense>
   </div>
 }
