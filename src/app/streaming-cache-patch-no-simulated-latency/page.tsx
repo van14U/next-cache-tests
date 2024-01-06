@@ -1,12 +1,12 @@
 import { Suspense } from "react";
 import {
-  CachedDateWithLatency,
+  CachedDate,
   ForceCacheRevalidation
 } from "../_queries/cached";
 
 export const runtime = "edge";
 
-export default async function Patched() {
+export default function Patched() {
   const now = new Date();
   return <div>
     Time: {now.toLocaleString("en-US", {
@@ -15,7 +15,7 @@ export default async function Patched() {
     <div>cached value:</div>
     <ForceCacheRevalidation />
     <Suspense fallback={'loading'}>
-      <CachedDateWithLatency />
+      <CachedDate />
     </Suspense>
   </div>
 }
