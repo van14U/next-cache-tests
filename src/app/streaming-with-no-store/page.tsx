@@ -1,8 +1,8 @@
-import { unstable_cache } from "next/cache";
+import { unstable_cache, unstable_noStore } from "next/cache";
 import { Suspense } from "react";
 import { waitFor } from "../_queries/cached";
 
-const CACHE_DATE_KEY = "cached-date";
+const CACHE_DATE_KEY = "cached-date-no-store";
 
 export const runtime = "edge";
 
@@ -17,14 +17,8 @@ const cachedDate = unstable_cache(async () => {
   }
 )
 
-const cacheReader = unstable_cache(() => Promise.resolve(0),)
-
-async function ForceCacheRevalidation() {
-  await cacheReader();
-  return null
-}
-
 async function CachedDate() {
+  unstable_noStore();
   const date = await cachedDate();
   return <div>
     Cached value 10 sec: {new Date(date).toLocaleString("en-US", {
@@ -40,7 +34,6 @@ export default function Bugged() {
       timeZone: "America/New_York",
     })}
     <div>Bugged value:</div>
-    <ForceCacheRevalidation />
     <Suspense fallback={'loading'}>
       <CachedDate />
     </Suspense>
