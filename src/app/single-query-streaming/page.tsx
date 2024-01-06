@@ -17,9 +17,13 @@ const cachedDate = unstable_cache(async () => {
   }
 )
 
+async function ForceCacheRevalidation() {
+  await Promise.resolve(0);
+  return null
+}
+
 async function CachedDate() {
   const date = await cachedDate();
-
   return <div>
     Cached value 10 sec: {new Date(date).toLocaleString("en-US", {
       timeZone: "America/New_York",
@@ -27,14 +31,14 @@ async function CachedDate() {
   </div>
 }
 
-
-export default function Bugged() {
+export default async function Bugged() {
   const now = new Date();
   return <div>
     Time: {now.toLocaleString("en-US", {
       timeZone: "America/New_York",
     })}
     <div>Bugged value:</div>
+    <ForceCacheRevalidation />
     <Suspense fallback={'loading'}>
       <CachedDate />
     </Suspense>
